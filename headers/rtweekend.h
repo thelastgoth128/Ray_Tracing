@@ -5,6 +5,11 @@
 #include <iostream> 
 #include <limits> 
 #include <memory> 
+
+#include "color.h"
+#include "ray.h"
+#include "vec3.h"
+#include "interval.h"
  
  
 // C++ Std Usings 
