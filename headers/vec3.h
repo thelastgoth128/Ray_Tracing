@@ -76,6 +76,14 @@ inline vec3 random_unit_vector() {
             return p / sqrt(lensq); 
     } 
 }
+
+inline vec3 random_on_hemisphere(const vec3& normal) { 
+    vec3 on_unit_sphere = random_unit_vector(); 
+    if (dot(on_unit_sphere, normal) > 0.0) // In the same hemisphere as the normal 
+        return on_unit_sphere; 
+    else 
+        return -on_unit_sphere; 
+}
  
 inline vec3 operator-(const vec3& u, const vec3& v) { 
     return vec3(u.e[0] - v.e[0], u.e[1] - v.e[1], u.e[2] - v.e[2]); 
